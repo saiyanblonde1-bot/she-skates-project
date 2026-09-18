@@ -48,17 +48,34 @@ Part 2 and Part 3 will build on this foundation in future submissions/edits.
 - `10 August` — Added Our Programmes content.
 - `11 August` — Built Enquiry form with volunteer/sponsor selection.
 - `12 August` — Built Contact page with two locations and a contact form.
-- `13 August` — Added base CSS styling (header, nav, forms, buttons).
+- `10 September` — Added base CSS styling (header, nav, forms, buttons).
+- `10 September` — Added CSS reset for consistent cross-browser styling.
+- `10 September` — Applied typography scale (font-size, line-height, letter-spacing) to headings and body text.
+- `10 September` — Implemented CSS Grid layout for team section and programmes section.
+- `10 September` — Added box-shadow, border, and :focus/:active states to buttons and nav links.
+- `10 September` — Added responsive design with media query breakpoint at 768px.
+- `10 September` — Converted key spacing values to em units and added screenshot evidence.
 
+## Responsive Design Evidence
+Screenshots below show the site tested across desktop, tablet, and mobile screen sizes using Chrome DevTools.
+
+### Desktop View
+![Desktop view of the homepage](screenshots/Desktop-View.png)
+
+### Tablet View
+![Tablet view of the homepage] (screenshots/Tablet-View.png)
+
+### Mobile View
+![Mobile view of the homepage](screenshots/Mobile-View.png)
 
 
 ## References
-*(W3Schools, 2026. *HTML Tutorial*. [online] Available at: <https://www.w3schools.com/html/> [Accessed [2 Agust]].
+*(W3Schools, 2026. *HTML Tutorial*. [online] Available at: <https://www.w3schools.com/html/> [Accessed 2 August].
 
-W3Schools, 2026. *CSS Tutorial*. [online] Available at: <https://www.w3schools.com/css/> [Accessed [2 August]].
+W3Schools, 2026. *CSS Tutorial*. [online] Available at: <https://www.w3schools.com/css/> [Accessed 2 August].
 
-Mozilla Developer Network (MDN), 2026. *HTML: HyperText Markup Language*. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/HTML> [Accessed [2 August]].
+Mozilla Developer Network (MDN), 2026. *HTML: HyperText Markup Language*. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/HTML> [Accessed 2 August].
 
-Mozilla Developer Network (MDN), 2026. *CSS: Cascading Style Sheets*. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS> [Accessed [2 August]].)*
+Mozilla Developer Network (MDN), 2026. *CSS: Cascading Style Sheets*. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS> [Accessed 2 August].)*
 
 
