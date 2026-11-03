@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saiyanblonde1-bot.github.io/she-skates-project/sitemap.xml
