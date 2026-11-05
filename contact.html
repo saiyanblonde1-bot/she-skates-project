@@ -5,31 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | She Skates</title>
     <meta name="description" content="Contact She Skates at our Vaal and Sebokeng locations, or send us a message using our contact form.">
-      <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
     <header> <a href="index.html">She Skates</a> <nav> <ul> <li><a href="index.html">Home</a></li> <li><a href="about.html">About Us</a></li> <li><a href="services.html">Services</a></li> <li><a href="enquiry.html">Enquiry</a></li> <li><a href="contact.html">Contact</a></li> </ul> </nav> </header>
+
     <h1>Contact Us</h1>
+
     <h2>Vaal Location</h2>
     <p>123 Example Street, Vaal, Sebokeng</p>
     <p>Phone: 012 345 6788</p>
     <p>Email: vaal@sheskates.org</p>
+
     <h2>Sebokeng Location</h2>
-    <p>456 Example Avenue, Sebokeng</p> 
+    <p>456 Example Avenue, Sebokeng</p>
     <p>Phone: 012 345 0000</p>
-<p>Email: sebokeng@sheskates.org</p>
-<h2> Send Us A Message</h2>
-<form>
-  <label for="c-name"> Full Name</label>
-  <input type="text" id="c-name" name="c-name" required>
-  <label for="c-email"> Email Address</label>
-  <input type="email" id="c-email" name="c-email" required>
-  <label for="c-message">Message</label>
-  <textarea id="c-message" name="c-message" rows="5"></textarea>
+    <p>Email: sebokeng@sheskates.org</p>
+    <h2>Send Us a Message</h2>
 
-  <button type="submit">Send Message</button>
-</form>
+    <form id="contact-form" action="mailto:hello@sheskates.org" method="post" novalidate>
 
-<script src="js/script.js"></script>
+        <label for="c-name">Full Name</label>
+        <input type="text" id="c-name" name="name" minlength="2" maxlength="50" required>
+        <p class="error" id="c-name-error"></p>
+
+        <label for="c-email">Email Address</label>
+        <input type="email" id="c-email" name="email" required>
+        <p class="error" id="c-email-error"></p>
+
+        <label for="c-phone">Phone Number (10 digits)</label>
+        <input type="tel" id="c-phone" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="0821234567" required>
+        <p class="error" id="c-phone-error"></p>
+
+        <label for="c-topic">Type of message</label>
+        <select id="c-topic" name="topic" required>
+            <option value="">Please choose</option>
+            <option value="General question">General question</option>
+            <option value="Programme information">Programme information</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Media or partnership">Media or partnership</option>
+            <option value="Other">Other</option>
+        </select>
+        <p class="error" id="c-topic-error"></p>
+
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" rows="6" minlength="10" maxlength="500" required></textarea>
+        <p class="error" id="c-message-error"></p>
+
+        <button type="submit">Prepare Email</button>
+    </form>
+
+    <div id="email-preview" hidden>
+        <h3>Your email is ready</h3>
+        <pre id="email-summary"></pre>
+        <a id="send-email-link" class="send-link" href="#">Open in my email app and send</a>
+    </div>
+    <h2>Find Us</h2>
+    <div id="map" role="img" aria-label="Map showing the She Skates Vaal and Sebokeng locations"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

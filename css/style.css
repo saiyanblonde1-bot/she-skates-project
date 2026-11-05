@@ -81,3 +81,111 @@ button:active {
         font-size: 1.4rem;
     }
 }
+.error {
+    color: #b00020;
+    font-size: 0.9rem;
+    margin-top: -8px;
+    margin-bottom: 8px;
+}
+
+#enquiry-response {
+    margin-top: 16px;
+    font-weight: bold;
+}
+#email-preview {
+    margin-top: 24px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    max-width: 700px;
+}
+
+#email-summary {
+    white-space: pre-wrap;
+    font-family: inherit;
+    margin: 12px 0;
+}
+
+.send-link {
+    display: inline-block;
+    background-color: #d63384;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.send-link:hover {
+    background-color: #a8296b;
+}
+/* Gives page content breathing room from the screen edges; the header stays full width */
+body > *:not(header):not(script) {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+#map {
+    height: 350px;
+    max-width: 900px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}/* Accordion (FAQ) */
+.accordion {
+    max-width: 700px;
+    margin-bottom: 32px;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #f8f8f8;
+    color: #222;
+    border: none;
+    border-radius: 0;
+    padding: 14px 40px 14px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion-header:hover {
+    background-color: #fde7f1;
+}
+
+.accordion-header:active {
+    background-color: #f3c6dc;
+}
+
+/* The + icon on the right, which turns into a − when the panel is open */
+.accordion-header::after {
+    content: '+';
+    position: absolute;
+    right: 16px;
+    font-size: 1.2rem;
+}
+
+.accordion-header[aria-expanded="true"]::after {
+    content: '−';
+}
+
+/* Panels are collapsed by default and slide open using a CSS transition */
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 16px;
+}
+
+.accordion-panel p {
+    margin: 12px 0;
+}
