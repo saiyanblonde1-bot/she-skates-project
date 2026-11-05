@@ -9,17 +9,32 @@
 </head>
 <body>
     <header> <a href="index.html">She Skates</a> <nav> <ul> <li><a href="index.html">Home</a></li> <li><a href="about.html">About Us</a></li> <li><a href="services.html">Services</a></li> <li><a href="enquiry.html">Enquiry</a></li> <li><a href="contact.html">Contact</a></li> </ul> </nav> </header>
-   <h1> Our programmes</h1>
-   <div class="programme-grid">
-     <div class="programme-card">
-   <h2>Beginner Skate lessons</h2>
-    <p>Host weekly sessions for girls and women who want to learn how to skate,help build confidence in young women.</p>
+
+    <h1>Our programmes</h1>
+
+    <div class="programme-controls">
+        <label for="programme-search">Search programmes</label>
+        <input type="search" id="programme-search" placeholder="e.g. beginner">
+
+        <label for="programme-filter">Day of the week</label>
+        <select id="programme-filter">
+            <option value="all">All days</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+
+        <label for="programme-sort">Sort by</label>
+        <select id="programme-sort">
+            <option value="az">Name A to Z</option>
+            <option value="za">Name Z to A</option>
+        </select>
     </div>
-    <div class="programme-card">
-<h2> Beke le Beke girls </h2>
-<p>This is for girls from age 7 until 18 and young women/women from 18 until 35,lessons are given to each individual. </p> 
-  </div> 
-</div>
+
+    <p id="programme-count"></p>
+
+    <!-- JavaScript fills this grid with programme cards -->
+    <div class="programme-grid" id="programme-grid"></div>
 
     <h2>Frequently Asked Questions</h2>
     <div class="accordion">
@@ -53,7 +68,7 @@
         </div>
 
     </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
-

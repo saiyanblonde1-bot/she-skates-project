@@ -291,5 +291,85 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });  
 
+    /* ---------- DYNAMIC PROGRAMMES: search, filter and sort (services page) ---------- */
+
+    var programmeGrid = document.getElementById('programme-grid');
+
+    // Only run on pages that have the programme grid
+    if (programmeGrid) {
+
+        // The programme data. JavaScript builds the cards from this list.
+        // To add a programme, add another { ... } line here.
+        var programmes = [
+            { name: 'Beginner Skate Lessons', ages: 'Girls and women, 7 to 35', day: 'Saturday', description: 'Weekly sessions for girls and women who want to learn how to skate, helping to build confidence in young women.' },
+            { name: 'Beke le Beke Girls', ages: 'Girls 7 to 18 and women 18 to 35', day: 'Wednesday', description: 'Open to girls from age 7 to 18 and women from 18 to 35. Lessons are given to each individual.' },
+            { name: 'Junior Skate Club', ages: 'Girls 7 to 12', day: 'Sunday', description: 'A relaxed club where younger girls practise balance and simple tricks with friends and a coach.' },
+            { name: "Women's Social Skate Night", ages: 'Women 18 to 35', day: 'Wednesday', description: 'An evening session for women to skate together, practise tricks and meet other skaters.' },
+            { name: 'Skate Safety and Gear Workshop', ages: 'Girls and women, 7 to 35', day: 'Sunday', description: 'Learn how to fit your helmet and pads, how to fall safely and how to look after your board.' }
+        ];
+
+        var searchBox = document.getElementById('programme-search');
+        var filterSelect = document.getElementById('programme-filter');
+        var sortSelect = document.getElementById('programme-sort');
+        var countEl = document.getElementById('programme-count');
+
+        // Works out which programmes to show, then rebuilds the cards on the page
+        function showProgrammes() {
+            var searchText = searchBox.value.trim().toLowerCase();
+            var day = filterSelect.value;
+
+            // 1. Filter: keep programmes that match the search text and the chosen day
+            var results = programmes.filter(function (p) {
+                var matchesSearch = (p.name + ' ' + p.description).toLowerCase().indexOf(searchText) !== -1;
+                var matchesDay = (day === 'all') || (p.day === day);
+                return matchesSearch && matchesDay;
+            });
+
+            // 2. Sort by name (A to Z, or reversed for Z to A)
+            results.sort(function (a, b) {
+                return a.name.localeCompare(b.name);
+            });
+            if (sortSelect.value === 'za') {
+                results.reverse();
+            }
+
+            // 3. Clear the grid, then create a card for each result
+            programmeGrid.innerHTML = '';
+
+            results.forEach(function (p) {
+                var card = document.createElement('div');
+                card.className = 'programme-card';
+
+                var title = document.createElement('h2');
+                title.textContent = p.name;
+
+                var details = document.createElement('p');
+                details.textContent = p.ages + ' | ' + p.day;
+
+                var text = document.createElement('p');
+                text.textContent = p.description;
+
+                card.appendChild(title);
+                card.appendChild(details);
+                card.appendChild(text);
+                programmeGrid.appendChild(card);
+            });
+
+            // 4. Tell the visitor what is showing
+            if (results.length === 0) {
+                countEl.textContent = 'No programmes match your search. Try a different word or day.';
+            } else {
+                countEl.textContent = 'Showing ' + results.length + ' of ' + programmes.length + ' programmes';
+            }
+        }
+
+        // Update the list whenever the visitor types or changes a dropdown
+        searchBox.addEventListener('input', showProgrammes);
+        filterSelect.addEventListener('change', showProgrammes);
+        sortSelect.addEventListener('change', showProgrammes);
+
+        // Show all programmes when the page first loads
+        showProgrammes();
+    }
 });
 
